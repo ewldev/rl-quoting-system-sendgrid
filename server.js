@@ -25,7 +25,7 @@ app.get("/sent", (req, res) => {
 app.post("/sendmail", (req, res) => {
     const { name, surname, email } = req.body;
   
-    const from = "edwin.leung2@gmail.com";
+    const from = {name:"RL Quoting System", email:"edwin.leung2@gmail.com",};
     const to = "edwin.leung2@gmail.com";
   
     const subject = "New Contact Request";

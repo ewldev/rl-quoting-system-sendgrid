@@ -11,7 +11,8 @@ const sendMail = (to, from, subject, text) => {
         html: text,
     }
 
-    sgMail.send(msg, function (err, result) {
+    // sgMail.sendMultiple(msg, function (err, result) {
+        sgMail.send(msg, function (err, result) {   
         if (err) {
             console.log("Email Not Sent");
         } else {
