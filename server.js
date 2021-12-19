@@ -28,14 +28,15 @@ app.post("/sendmail", (req, res) => {
     const from = {name:"RL Quoting System", email:"edwin.leung2@gmail.com",};
     const to = "edwin.leung2@gmail.com";
   
-    const subject = "New Contact Request";
+    const subject = "New Quotation Request";
   
     const output = `
-      <p>You have a new Contact Request</p>
-      <h3>Contact Details</h3>
+      <p>You have a new quotation request</p>
+      <h3>Service Selections</h3>
       <ul>
-        <li>Name: ${name}</li>
-        <li>Surname: ${surname}</li>
+        <li>Service: ${service}</li>
+        <li>Category: ${category}</li>
+        <li>compilation-txn: ${compilation-txn}</li>
         <li>Email: ${email}</li>
       </ul>
     `;
