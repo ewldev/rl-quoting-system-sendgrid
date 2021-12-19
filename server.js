@@ -23,7 +23,7 @@ app.get("/sent", (req, res) => {
 });
 
 app.post("/sendmail", (req, res) => {
-    const { name, surname, email } = req.body;
+    const { service, category, email } = req.body;
   
     const from = {name:"RL Quoting System", email:"edwin.leung2@gmail.com",};
     const to = "edwin.leung2@gmail.com";
@@ -36,10 +36,19 @@ app.post("/sendmail", (req, res) => {
       <ul>
         <li>Service: ${service}</li>
         <li>Category: ${category}</li>
-        <li>compilation-txn: ${compilation-txn}</li>
         <li>Email: ${email}</li>
       </ul>
     `;
+//     const output = `
+//     <p>You have a new quotation request</p>
+//     <h3>Service Selections</h3>
+//     <ul>
+//       <li>Service: ${service}</li>
+//       <li>Category: ${category}</li>
+//       <li>compilation-txn: ${compilation-txn}</li>
+//       <li>Email: ${email}</li>
+//     </ul>
+//   `;
   
     sendMail(to, from, subject, output);
     res.redirect("/sent");

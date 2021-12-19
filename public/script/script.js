@@ -317,8 +317,8 @@ window.onload = function(){
 };
 
 // Event Listener
-form.addEventListener('submit', processFormData);     
-form.addEventListener('submit', calculate); 
+// form.addEventListener('submit', processFormData);     
+// form.addEventListener('submit', calculate); 
   
 
 
