@@ -142,8 +142,8 @@ function showHide3(elem) {
 }
   
 function processFormData(e) {
-    e.preventDefault();
-      //  storeFormData();      
+    // e.preventDefault();
+    // calculate();      
 }
  
 function resetCategory() {
@@ -316,10 +316,13 @@ window.onload = function(){
   };
 };
 
+// disabled following EventListeners to allow form to post to sendmail when submit
+// added onclick="calculate(this)" to submit button instead
+
 // Event Listener
 // form.addEventListener('submit', processFormData);     
 // form.addEventListener('submit', calculate); 
-  
+
 
 
 
