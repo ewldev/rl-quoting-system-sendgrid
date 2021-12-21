@@ -143,7 +143,7 @@ function showHide3(elem) {
   
 function processFormData(e) {
     // e.preventDefault();
-    // calculate();      
+    calculate();      
 }
  
 function resetCategory() {
