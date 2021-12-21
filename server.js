@@ -51,7 +51,7 @@ app.post("/sendmail", (req, res) => {
 //   `;
   
     sendMail(to, from, subject, output);
-    res.redirect('back');
+    // res.redirect('back');
   });
 
 const PORT = process.env.PORT || 8080;
