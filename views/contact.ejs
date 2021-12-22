@@ -33,8 +33,8 @@
           </div>
                    
           <div id="div4">
-            <label for="compilation-txn">Transactions per year</label>
-            <select name="compilation-txn" onchange="showHide3(this)" id="compilation-txn" >
+            <label for="compilationTxn">Transactions per year</label>
+            <select name="compilationTxn" onchange="showHide3(this)" id="compilationTxn" >
               <option value="" disabled selected >Select your option</option>
               <option value="7">0-50</option>
               <option value="8">50-150</option>
@@ -43,24 +43,24 @@
           </div>  
 
           <div id="div5">
-            <label for="review-txn">Transactions per year</label>
-            <select name="review-txn" id="review-txn" >
+            <label for="reviewTxn">Transactions per year</label>
+            <select name="reviewTxn" id="reviewTxn" >
               <option value="" disabled selected >Select your option</option>
               <option value="10">150+</option>                      
             </select>
           </div>
           
           <div id="div6">
-            <label for="audit-txn">Transactions per year</label>
-            <select name="audit-txn" id="audit-txn" >
+            <label for="auditTxn">Transactions per year</label>
+            <select name="auditTxn" id="auditTxn" >
               <option value="" disabled selected >Select your option</option>
               <option value="11">150+</option>              
             </select>
           </div>
 
           <div id="div7">
-            <label for="50txn-service">Available services (optional)</label>
-            <select name="50txn-service" onchange="resetServiceRate(this)" id="50txn-service" >
+            <label for="fiftyService">Available services (optional)</label>
+            <select name="fiftyService" onchange="resetServiceRate(this)" id="fiftyService" >
               <option value="" >Select your option</option>
               <option value="consulting-business1">Consulting business</option>
               <option value="holdings-company1">Holdings company</option>
@@ -68,8 +68,8 @@
           </div>  
 
           <div id="div8">
-            <label for="150txn-service">Available services (optional)</label>
-            <select name="150txn-service" onchange="resetServiceRate(this)" id="150txn-service" >
+            <label for="oneFiftyService">Available services (optional)</label>
+            <select name="oneFiftyService" onchange="resetServiceRate(this)" id="oneFiftyService" >
               <option value="" >Select your option</option>
               <option value="consulting-business2">Consulting business</option>
               <option value="holdings-company2">Holdings company</option>
@@ -81,8 +81,8 @@
           </div>  
 
           <div id="div9">
-            <label for="150uptxn-service">Available services (optional)</label>
-            <select name="150uptxn-service" onchange="resetServiceRate(this)" id="150uptxn-service" >
+            <label for="oneFiftyPlusService">Available services (optional)</label>
+            <select name="oneFiftyPlusService" onchange="resetServiceRate(this)" id="oneFiftyPlusService" >
               <option value="" >Select your option</option>
               <option value="consulting-business3">Consulting business</option>
               <option value="holdings-company3">Holdings company</option>
@@ -101,8 +101,8 @@
                <!-- placeholder="email@address.com" required> -->
         <button type="submit"  onclick="processFormData(this)" id="submit">Submit</button>
         <label for="result">Estimated cost of service</label>
-        <output type="text" id="result"> </output>
-        
+        <output name="quote" type="text" id="result"> </output>
+               
         <!-- Incorporation & business accounts registration -->
         <div id="div2">
 

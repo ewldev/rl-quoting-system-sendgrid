@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email Sent</title>
-    <link rel="stylesheet" href="./public/css/style1.css" />
+    <link rel="stylesheet" href="./public/css/style.css" />
   </head>
   <body>
-    <div class="sent_pageBox">
-      <h2 class="sent_pageBox__title">You're email was sent</h2>
-      <a class="sent_pageBox__Link" href="/">Back</a>
+    <div class="container">
+      <h2 class="sent_pageBox__title">Your Quotation</h2>
+      <form id="form">
+        <label for="result">Estimated cost of service</label>
+        <output name="service" type="text" id="result"> </output>
+        <a class="sent_pageBox__Link" href="/">Back</a>
+      </form>
     </div>
+    <script type="text/javascript" src="./public/script/script.js"></script>
   </body>
 </html>
