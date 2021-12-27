@@ -28,32 +28,13 @@ function showHide1(elem) {
       //unhide the selected div
   if (elem.value == 1) {
       document.getElementById('div1').style.display = 'flex';
-  }  
-  
-  console.log('category value showHide1',category.value);
-  console.log('complilation value',compilation.value);
-    console.log('reviewEgmt value',reviewEgmt.value);
-    console.log('auditEgmt value',auditEgmt.value);     
-  console.log('fiftyTxn value showHide1',fiftyTxn.value);
-    console.log('oneFiftyTxn value showHide1',oneFiftyTxn.value);
-    console.log('oneFiftyPlusTxn value showHide1',oneFiftyPlusTxn.value); 
-    console.log ('serviceRate showHide1',serviceRate); 
+  }    
   setRequired(elem);  
   resetCategory();  
   resetTransactions()
   resetValues();
   result.style.display = 'inline'; 
   result.value = serviceRate;
-
-  console.log('category value showHide1',category.value);
-  console.log('complilation value',compilation.value);
-    console.log('reviewEgmt value',reviewEgmt.value);
-    console.log('auditEgmt value',auditEgmt.value);     
-  console.log('fiftyTxn value showHide1',fiftyTxn.value);
-    console.log('oneFiftyTxn value showHide1',oneFiftyTxn.value);
-    console.log('oneFiftyPlusTxn value showHide1',oneFiftyPlusTxn.value); 
-    console.log ('serviceRate showHide1',serviceRate);  
-    
 }
 
 function showHide2(elem) {
@@ -62,29 +43,11 @@ function showHide2(elem) {
         divs[i].style.display = 'none';               
     }
     document.getElementById('div'+elem.value).style.display = 'flex';
-  }
-  console.log('category value showHide2',category.value);
-  console.log('complilation value',compilation.value);
-    console.log('reviewEgmt value',reviewEgmt.value);
-    console.log('auditEgmt value',auditEgmt.value);     
-  console.log('fiftyTxn value showHide2',fiftyTxn.value);
-    console.log('oneFiftyTxn value showHide2',oneFiftyTxn.value);
-    console.log('oneFiftyPlusTxn value showHide2',oneFiftyPlusTxn.value); 
-    console.log ('serviceRate showHide2',serviceRate); 
-  
+  }    
   setRequired2(elem); 
   resetTransactions();
   resetValues();
-  result.value = serviceRate;
-
-  console.log('category value showHide2',category.value);
-  console.log('complilation value',compilation.value);
-    console.log('reviewEgmt value',reviewEgmt.value);
-    console.log('auditEgmt value',auditEgmt.value);     
-  console.log('fiftyTxn value showHide2',fiftyTxn.value);
-    console.log('oneFiftyTxn value showHide2',oneFiftyTxn.value);
-    console.log('oneFiftyPlusTxn value showHide2',oneFiftyPlusTxn.value); 
-    console.log ('serviceRate showHide2',serviceRate); 
+  result.value = serviceRate; 
  }
 
  function setRequired (elem) {
@@ -124,36 +87,25 @@ function showHide3(elem) {
     }    
     document.getElementById('div'+elem.value).style.display = 'flex';
   }
-  console.log('category value showHide3',category.value);
-  console.log('complilation value',compilation.value);
-    console.log('reviewEgmt value',reviewEgmt.value);
-    console.log('auditEgmt value',auditEgmt.value);     
-  console.log('fiftyTxn value showHide3',fiftyTxn.value);
-    console.log('oneFiftyTxn value showHide3',oneFiftyTxn.value);
-    console.log('oneFiftyPlusTxn value showHide3',oneFiftyPlusTxn.value); 
-   console.log ('serviceRate showHide3',serviceRate); 
   resetValues(); //remove previous transaction and serviceRate values when compilation transactions are changed, allowing new values to be pulled  
   result.value = serviceRate;
-  console.log('category value showHide3',category.value);
-  console.log('complilation value',compilation.value);
-    console.log('reviewEgmt value',reviewEgmt.value);
-    console.log('auditEgmt value',auditEgmt.value);     
-  console.log('fiftyTxn value showHide3',fiftyTxn.value);
-    console.log('oneFiftyTxn value showHide3',oneFiftyTxn.value);
-    console.log('oneFiftyPlusTxn value showHide3',oneFiftyPlusTxn.value); 
-   console.log ('serviceRate showHide3',serviceRate); 
 }
   
 function processFormData(e) {
     e.preventDefault();
     calculate(); 
-    fetch('http://localhost:8080/sendmail', {
+    console.log('processFormData service.value',service.value)
+    console.log('processFormData service.name',service.name)
+    console.log('processFormData service',service)
+    fetch('http://localhost:8080/sendmail',{
       method: 'post',
-    }) 
+      body: JSON.stringify({
+        service: service.value
+       })  
+    })      
     .then(response => response.json())    
     .catch(err => console.log(err))  
-    
-}
+  }
  
 function resetCategory() {
     category.value = '';
@@ -181,11 +133,6 @@ function resetCategory() {
   }
 
   function calculate() {      
-    console.log('fiftyTxn value calculate start',fiftyTxn.value);
-    console.log('oneFiftyTxn value calculate start',oneFiftyTxn.value);
-    console.log('oneFiftyPlusTxn value calculate start',oneFiftyPlusTxn.value); 
-    console.log ('serviceRate calculate start',serviceRate);    
-        
     switch(service.value) {
       case '2':
         document.getElementById('div2').style.display = 'block';     
@@ -308,12 +255,7 @@ function resetCategory() {
         break;
       default:
         break;    
-    } 
-    
-    console.log('fiftyTxn value calculate end',fiftyTxn.value);
-    console.log('oneFiftyTxn value calculate end',oneFiftyTxn.value);
-    console.log('oneFiftyPlusTxn value calculate end',oneFiftyPlusTxn.value); 
-    console.log ('serviceRate calculate end',serviceRate);
+    }    
   }  
 
 // close button

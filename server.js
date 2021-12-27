@@ -6,7 +6,6 @@ const express = require('express');
 const app = express();
 
 const sendMail = require('./utils/sendMail');
-// const calculate = require('./utils/calculate');
 
 app.use(express.json());
 
