@@ -99,6 +99,7 @@ function processFormData(e) {
     console.log('processFormData service',service)
     fetch('http://localhost:8080/sendmail',{
       method: 'post',
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         service: service.value
        })  
