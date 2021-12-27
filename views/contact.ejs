@@ -13,7 +13,8 @@
   <div class="container">
       <button id='button-close'>close</button>
       <h1>Get an Instant Quote</h1>
-      <form id="form" method="POST" action="/sendmail">
+      <!-- <form id="form" method="POST" action="/sendmail"> -->
+      <form id="form">
           <label for="service">Type of service</label>
           <select name="service" onchange="showHide1(this)" id="service" required >
             <option value="" disabled selected>Select your option</option>
@@ -38,6 +39,7 @@
               <option value="" disabled selected >Select your option</option>
               <option value="7">0-50</option>
               <option value="8">50-150</option>
+
               <option value="9">150+</option>
             </select>
           </div>  
@@ -99,7 +101,7 @@
           <input type="email" id="email" name="email" 
                placeholder="email@address.com">  
                <!-- placeholder="email@address.com" required> -->
-        <button type="submit"  onclick="processFormData(this)" id="submit">Submit</button>
+        <button type="submit" id="submit">Submit</button>
         <label for="result">Estimated cost of service</label>
         <output name="quote" type="text" id="result"> </output>
                

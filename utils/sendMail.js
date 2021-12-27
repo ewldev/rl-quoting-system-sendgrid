@@ -38,9 +38,13 @@ const sendMail = (req, res) => {
     // sgMail.sendMultiple(msg, function (err, result) {
         sgMail.send(msg, function (err, result) {   
         if (err) {
-            console.log("Email Not Sent");
+            // console.log("Email Not Sent");
+            res.status(400).json('Email Not Sent');
         } else {
+            
             console.log("Email was sent");
+            
+            res.json(output);
         }
     });    
 };

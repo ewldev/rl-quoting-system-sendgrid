@@ -1,6 +1,9 @@
 // const form = document.getElementById('form');
 // const messageContainer = document.querySelector('.message-container');
 // const message = document.getElementById('message');
+
+// const { response } = require("express");
+
 // let isValid = false;
 const divs = document.getElementById('form').getElementsByTagName('div');
 const service = document.getElementById('service');
@@ -142,8 +145,14 @@ function showHide3(elem) {
 }
   
 function processFormData(e) {
-    // e.preventDefault();
-    calculate();      
+    e.preventDefault();
+    calculate(); 
+    fetch('http://localhost:8080/sendmail', {
+      method: 'post',
+    }) 
+    .then(response => response.json())    
+    .catch(err => console.log(err))  
+    
 }
  
 function resetCategory() {
@@ -320,7 +329,7 @@ window.onload = function(){
 // added onclick="calculate(this)" to submit button instead
 
 // Event Listener
-// form.addEventListener('submit', processFormData);     
+form.addEventListener('submit', processFormData);     
 // form.addEventListener('submit', calculate); 
 
 
