@@ -17,6 +17,8 @@ const oneFiftyPlusTxn = document.getElementById('oneFiftyPlusService');
 const result = document.getElementById('result');
 let serviceRate = 0;
 
+console.log('divs', divs)
+
 function showHide1(elem) {  
   //get the divs to show/hide  
   if (elem.selectedIndex != 0) {
@@ -26,7 +28,7 @@ function showHide1(elem) {
        }
   }                  
       //unhide the selected div
-  if (elem.value == 1) {
+  if (elem.value == 'financial statements & tax returns preparation') {
       document.getElementById('div1').style.display = 'flex';
   }    
   setRequired(elem);  
@@ -42,7 +44,7 @@ function showHide2(elem) {
     for(let i=1; i < divs.length; i++) {
         divs[i].style.display = 'none';               
     }
-    document.getElementById('div'+elem.value).style.display = 'flex';
+    document.getElementById(elem.value).style.display = 'flex';
   }    
   setRequired2(elem); 
   resetTransactions();
@@ -51,7 +53,7 @@ function showHide2(elem) {
  }
 
  function setRequired (elem) {
-  if (elem.value == '1' ) {
+  if (elem.value == 'financial statements & tax returns preparation' ) {
     category.required = true;
   } else {
     category.required = false;  
@@ -63,15 +65,15 @@ function showHide2(elem) {
  } 
 
 function setRequired2 (elem) {
-  if (elem.value == '4' ) {
+  if (elem.value == 'compilation' ) {
     compilation.required = true;
     reviewEgmt.required = false;
     auditEgmt.required = false;
-  } else if (elem.value == '5') {
+  } else if (elem.value == 'review-engagement') {
     compilation.required = false;
     reviewEgmt.required = true;
     auditEgmt.required = false;
-  } else if (elem.value == '6') {
+  } else if (elem.value == 'audit-engagement') {
     compilation.required = false;
     reviewEgmt.required = false;
     auditEgmt.required = true;
@@ -139,11 +141,11 @@ function resetCategory() {
 
   function calculate() {      
     switch(service.value) {
-      case '2':
+      case 'incorporation & business accounts registration':
         document.getElementById('div2').style.display = 'block';     
         result.style.display = 'none'; 
         break;
-      case '3':
+      case 'personal tax preparation':
         document.getElementById('div3').style.display = 'block'; 
         result.style.display = 'none'; 
       default:

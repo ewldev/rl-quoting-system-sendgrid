@@ -18,22 +18,22 @@
           <label for="service">Type of service</label>
           <select name="service" onchange="showHide1(this)" id="service" required >
             <option value="" disabled selected>Select your option</option>
-            <option value="1">Financial statements & tax returns preparation</option>               
-            <option value="2">Incorporation & business accounts registration</option>
-            <option value="3">Personal tax preparation</option>
+            <option value="financial statements & tax returns preparation">Financial statements & tax returns preparation</option>               
+            <option value="incorporation & business accounts registration">Incorporation & business accounts registration</option>
+            <option value="personal tax preparation">Personal tax preparation</option>
           </select>
           
           <div id="div1">
             <label for="category">Category</label>
             <select name="category" onchange="showHide2(this)" id="category" >
               <option value="" disabled selected>Select your option</option>
-              <option value="4">Compilation</option>               
-              <option value="5">Review Engagement</option>
-              <option value="6">Audit Engagement</option>
+              <option value="compilation">Compilation</option>               
+              <option value="review-engagement">Review Engagement</option>
+              <option value="audit-engagement">Audit Engagement</option>
             </select>
           </div>
                    
-          <div id="div4">
+          <div id="compilation">
             <label for="compilationTxn">Transactions per year</label>
             <select name="compilationTxn" onchange="showHide3(this)" id="compilationTxn" >
               <option value="" disabled selected >Select your option</option>
@@ -44,7 +44,7 @@
             </select>
           </div>  
 
-          <div id="div5">
+          <div id="review-engagement">
             <label for="reviewTxn">Transactions per year</label>
             <select name="reviewTxn" id="reviewTxn" >
               <option value="" disabled selected >Select your option</option>
@@ -52,7 +52,7 @@
             </select>
           </div>
           
-          <div id="div6">
+          <div id="audit-engagement">
             <label for="auditTxn">Transactions per year</label>
             <select name="auditTxn" id="auditTxn" >
               <option value="" disabled selected >Select your option</option>
@@ -107,10 +107,10 @@
                
         <!-- Incorporation & business accounts registration -->
         <div id="div2">
-
           <p>$800 <br>
           business trade name add $100</p>
         </div>
+
 
         <!-- Personal tax preparation -->
         <div id="div3">

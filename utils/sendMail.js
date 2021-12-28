@@ -4,9 +4,7 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const sendMail = (req, res) => {
-    // const { service, category, compilationTxn, fiftyService, oneFiftyService, oneFiftyPlusService, quote, email } = req.body;
-    console.log('service.value sendMail',req.body)
-    
+    console.log('service.value sendMail',req.body)    
     const from = {name:"RL Quoting System", email:"edwin.leung2@gmail.com",};
     const to = "edwin.leung2@gmail.com";
   
@@ -37,12 +35,9 @@ const sendMail = (req, res) => {
     // sgMail.sendMultiple(msg, function (err, result) {
         sgMail.send(msg, function (err, result) {   
         if (err) {
-            // console.log("Email Not Sent");
             res.status(400).json('Email Not Sent');
         } else {
-            
             console.log("Email was sent");
-            
             res.json(output);
         }
     });    
