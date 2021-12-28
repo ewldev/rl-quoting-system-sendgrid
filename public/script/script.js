@@ -94,14 +94,18 @@ function showHide3(elem) {
 function processFormData(e) {
     e.preventDefault();
     calculate(); 
-    console.log('processFormData service.value',service.value)
-    console.log('processFormData service.name',service.name)
-    console.log('processFormData service',service)
     fetch('http://localhost:8080/sendmail',{
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        service: service.value
+        service: service.value,
+        category: category.value,
+        compilationTxn: compilationTxn.value,
+        fiftyService: fiftyService.value,
+        oneFiftyService: oneFiftyService.value,
+        oneFiftyPlusService: oneFiftyPlusService.value,
+        quote: result.value,
+        email: email.value
        })  
     })      
     .then(response => response.json())    
