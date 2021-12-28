@@ -50,9 +50,21 @@ function showHide2(elem) {
   resetTransactions();
   resetValues();
   result.value = serviceRate; 
- }
+}
 
- function setRequired (elem) {
+function showHide3(elem) {
+  if(elem.selectedIndex != 0) {
+    for(let i=2; i < divs.length; i++) {
+        divs[i].style.display = 'none';
+        // console.log('divsi', divs[i]);         
+    }    
+    document.getElementById(elem.value).style.display = 'flex';
+  }
+  resetValues(); //remove previous transaction and serviceRate values when compilation transactions are changed, allowing new values to be pulled  
+  result.value = serviceRate;
+} 
+
+function setRequired (elem) {
   if (elem.value == 'financial statements & tax returns preparation' ) {
     category.required = true;
   } else {
@@ -60,9 +72,9 @@ function showHide2(elem) {
     compilation.required = false;
     reviewEgmt.required = false;
     auditEgmt.required = false;  
- }
+  }
   console.log('elem.value',elem.value);
- } 
+} 
 
 function setRequired2 (elem) {
   if (elem.value == 'compilation' ) {
@@ -77,20 +89,8 @@ function setRequired2 (elem) {
     compilation.required = false;
     reviewEgmt.required = false;
     auditEgmt.required = true;
- }
-  console.log('elem2.value',elem.value);
- }
-
-function showHide3(elem) {
-  if(elem.selectedIndex != 0) {
-    for(let i=2; i < divs.length; i++) {
-        divs[i].style.display = 'none';
-        // console.log('divsi', divs[i]);         
-    }    
-    document.getElementById('div'+elem.value).style.display = 'flex';
   }
-  resetValues(); //remove previous transaction and serviceRate values when compilation transactions are changed, allowing new values to be pulled  
-  result.value = serviceRate;
+  console.log('elem2.value',elem.value);
 }
   
 function processFormData(e) {
@@ -112,34 +112,34 @@ function processFormData(e) {
     })      
     .then(response => response.json())    
     .catch(err => console.log(err))  
-  }
+}
  
 function resetCategory() {
     category.value = '';
     // console.log('category value reset',category.value);
-  }
+}
 
-  function resetTransactions() {
+function resetTransactions() {
     compilation.value = '';
     reviewEgmt.value = '';
     auditEgmt.value = '';
-  }
+}
 
-  function resetValues() {
+function resetValues() {
     fiftyTxn.value = '';
     oneFiftyTxn.value = ''; 
     oneFiftyPlusTxn.value = '';  
     serviceRate = '';
-  }
+}
 
-  function resetServiceRate () {
+function resetServiceRate () {
     console.log ('resetServiceRate start', serviceRate); 
     serviceRate = '';
     result.value = '';
     console.log ('resetServiceRate end', serviceRate); 
-  }
+}
 
-  function calculate() {      
+function calculate() {      
     switch(service.value) {
       case 'incorporation & business accounts registration':
         document.getElementById('div2').style.display = 'block';     
@@ -152,15 +152,15 @@ function resetCategory() {
         break;  
     }
     switch(compilation.value) {
-      case '7':
+      case 'fifty-txn':
         serviceRate = '$1500-$1800';
         result.value = serviceRate;
         break;
-      case '8':
+      case 'onefifty-txn':
         serviceRate = '$1800-$2500';
         result.value = serviceRate;
         break;
-      case '9':
+      case 'onefiftyplus-txn':
         serviceRate = '$2500-$3500'; 
         result.value = serviceRate; 
         break;
@@ -263,7 +263,7 @@ function resetCategory() {
       default:
         break;    
     }    
-  }  
+}  
 
 // close button
 window.onload = function(){

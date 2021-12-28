@@ -37,10 +37,9 @@
             <label for="compilationTxn">Transactions per year</label>
             <select name="compilationTxn" onchange="showHide3(this)" id="compilationTxn" >
               <option value="" disabled selected >Select your option</option>
-              <option value="7">0-50</option>
-              <option value="8">50-150</option>
-
-              <option value="9">150+</option>
+              <option value="fifty-txn">0-50</option>
+              <option value="onefifty-txn">50-150</option>
+              <option value="onefiftyplus-txn">150+</option>
             </select>
           </div>  
 
@@ -60,7 +59,7 @@
             </select>
           </div>
 
-          <div id="div7">
+          <div id="fifty-txn">
             <label for="fiftyService">Available services (optional)</label>
             <select name="fiftyService" onchange="resetServiceRate(this)" id="fiftyService" >
               <option value="" >Select your option</option>
@@ -69,7 +68,7 @@
             </select>
           </div>  
 
-          <div id="div8">
+          <div id="onefifty-txn">
             <label for="oneFiftyService">Available services (optional)</label>
             <select name="oneFiftyService" onchange="resetServiceRate(this)" id="oneFiftyService" >
               <option value="" >Select your option</option>
@@ -82,7 +81,7 @@
             </select>
           </div>  
 
-          <div id="div9">
+          <div id="onefiftyplus-txn">
             <label for="oneFiftyPlusService">Available services (optional)</label>
             <select name="oneFiftyPlusService" onchange="resetServiceRate(this)" id="oneFiftyPlusService" >
               <option value="" >Select your option</option>

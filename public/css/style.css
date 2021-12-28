@@ -70,11 +70,7 @@ h1 {
 }
 
 /* hide selections */
-/* #div1, #div4, #div5, #div6, #div7, #div8, #div9 {
-  display: none;
-  flex-direction: column;
-} */
-#div1, #div2, #div3, #compilation, #review-engagement, #audit-engagement, #div7, #div8, #div9 {
+#div1, #div2, #div3, #compilation, #review-engagement, #audit-engagement, #fifty-txn, #onefifty-txn, #onefiftyplus-txn {
   display: none;
   flex-direction: column;
 }

@@ -16,11 +16,12 @@ const sendMail = (req, res) => {
       <ul>
         <li>Service: ${req.body.service}</li>
         <li>Category: ${req.body.category}</li>
-        <li>Compilation Transactions: ${req.body.compilationTxn}</li>
-        <li>50 transactions service: ${req.body.fiftyService}</li>
-        <li>150 transactions service: ${req.body.oneFiftyService}</li>
+        <li>Compilation transactions per year: ${req.body.compilationTxn}</li>
+        <li>0-50 transactions service: ${req.body.fiftyService}</li>
+        <li>50-150 transactions service: ${req.body.oneFiftyService}</li>
         <li>150+ transactions service: ${req.body.oneFiftyPlusService}</li>
         <li>Quoted amount: ${req.body.quote}</li>        
+        
         <li>Email: ${req.body.email}</li>               
       </ul>      
     `;
