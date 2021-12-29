@@ -18,16 +18,8 @@ app.get("/", (req, res) => {
   res.render("contact");
 });
 
-app.get("/sent", (req, res) => {
-  // console.log('get body.service', res.body.service)
-  res.render("sent");
-})
-
-app.post("/sendmail", (req, res) => {sendMail (req, res)});
-    
-  
-  //   sendMail(to, from, subject, output);
-    
+app.post("/sendmail", (req, res) => {sendMail (req, res)});  
+  //   sendMail(to, from, subject, output);    
   // });
 
 const PORT = process.env.PORT || 8080;

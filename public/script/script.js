@@ -1,10 +1,5 @@
-// const form = document.getElementById('form');
 // const messageContainer = document.querySelector('.message-container');
 // const message = document.getElementById('message');
-
-// const { response } = require("express");
-
-// let isValid = false;
 const divs = document.getElementById('form').getElementsByTagName('div');
 const service = document.getElementById('service');
 const category = document.getElementById('category');
@@ -32,7 +27,7 @@ function showHide1(elem) {
   setRequired(elem);  
   resetCategory();  
   resetTransactions()
-  resetValues();
+  resetServiceValues();
   result.style.display = 'inline'; 
   result.value = serviceRate;
 }
@@ -46,7 +41,7 @@ function showHide2(elem) {
   }    
   setRequired2(elem); 
   resetTransactions();
-  resetValues();
+  resetServiceValues();
   result.value = serviceRate; 
 }
 
@@ -58,7 +53,7 @@ function showHide3(elem) {
     }    
     document.getElementById(elem.value).style.display = 'flex';
   }
-  resetValues(); //remove previous transaction and serviceRate values when compilation transactions are changed, allowing new values to be pulled  
+  resetServiceValues(); //remove previous transaction and serviceRate values when compilation transactions are changed, allowing new values to be pulled  
   result.value = serviceRate;
 } 
 
@@ -71,7 +66,6 @@ function setRequired (elem) {
     reviewEgmt.required = false;
     auditEgmt.required = false;  
   }
-  console.log('elem.value',elem.value);
 } 
 
 function setRequired2 (elem) {
@@ -89,27 +83,6 @@ function setRequired2 (elem) {
     auditEgmt.required = true;
   }  
 }
-  
-function processFormData(e) {
-    e.preventDefault();
-    calculate(); 
-    fetch('http://localhost:8080/sendmail',{
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        service: service.value,
-        category: category.value,
-        compilationTxn: compilationTxn.value,
-        fiftyService: fiftyService.value,
-        oneFiftyService: oneFiftyService.value,
-        oneFiftyPlusService: oneFiftyPlusService.value,
-        quote: result.value,
-        email: email.value
-       })  
-    })      
-    .then(response => response.json())    
-    .catch(err => console.log(err))  
-}
  
 function resetCategory() {
     category.value = '';
@@ -121,7 +94,7 @@ function resetTransactions() {
     auditEgmt.value = '';
 }
 
-function resetValues() {
+function resetServiceValues() {
     fiftyTxn.value = '';
     oneFiftyTxn.value = ''; 
     oneFiftyPlusTxn.value = '';  
@@ -161,7 +134,6 @@ function calculate() {
       default:
          break;  
     }
-
     switch(reviewEgmt.value) {
       case '10':
         serviceRate = '$5500-$7500';
@@ -170,7 +142,6 @@ function calculate() {
       default:
         break;  
     }
-
     switch(auditEgmt.value) {
       case '11':
         serviceRate = '$9000-$12000';
@@ -179,7 +150,6 @@ function calculate() {
       default:
          break;  
     }
-
     switch(fiftyTxn.value) {      
       case 'consulting-business1':
         serviceRate = '$1500';        
@@ -266,6 +236,31 @@ window.onload = function(){
       return false;
   };
 };
+
+function processFormData(e) {
+  // to prevent entered form info from refreshing
+  e.preventDefault(); 
+
+  calculate();
+
+  // access sendgrid api
+  fetch('http://localhost:8080/sendmail',{
+    method: 'post',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      service: service.value,
+      category: category.value,
+      compilationTxn: compilationTxn.value,
+      fiftyService: fiftyService.value,
+      oneFiftyService: oneFiftyService.value,
+      oneFiftyPlusService: oneFiftyPlusService.value,
+      quote: result.value,
+      email: email.value
+     })  
+  })      
+  .then(response => response.json())    
+  .catch(err => console.log(err))  
+}
 
 // Event Listener
 form.addEventListener('submit', processFormData);     
