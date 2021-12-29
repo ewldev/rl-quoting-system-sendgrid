@@ -17,8 +17,6 @@ const oneFiftyPlusTxn = document.getElementById('oneFiftyPlusService');
 const result = document.getElementById('result');
 let serviceRate = 0;
 
-console.log('divs', divs)
-
 function showHide1(elem) {  
   //get the divs to show/hide  
   if (elem.selectedIndex != 0) {
@@ -89,8 +87,7 @@ function setRequired2 (elem) {
     compilation.required = false;
     reviewEgmt.required = false;
     auditEgmt.required = true;
-  }
-  console.log('elem2.value',elem.value);
+  }  
 }
   
 function processFormData(e) {
@@ -116,7 +113,6 @@ function processFormData(e) {
  
 function resetCategory() {
     category.value = '';
-    // console.log('category value reset',category.value);
 }
 
 function resetTransactions() {
@@ -133,10 +129,8 @@ function resetValues() {
 }
 
 function resetServiceRate () {
-    console.log ('resetServiceRate start', serviceRate); 
     serviceRate = '';
-    result.value = '';
-    console.log ('resetServiceRate end', serviceRate); 
+    result.value = '';    
 }
 
 function calculate() {      
@@ -188,8 +182,7 @@ function calculate() {
 
     switch(fiftyTxn.value) {      
       case 'consulting-business1':
-        serviceRate = '$1500';
-        
+        serviceRate = '$1500';        
         result.value = serviceRate;  
         break;
       case 'holdings-company1':
@@ -274,12 +267,9 @@ window.onload = function(){
   };
 };
 
-// disabled following EventListeners to allow form to post to sendmail when submit
-// added onclick="calculate(this)" to submit button instead
-
 // Event Listener
 form.addEventListener('submit', processFormData);     
-// form.addEventListener('submit', calculate); 
+
 
 
 
