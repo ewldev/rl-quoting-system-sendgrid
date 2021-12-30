@@ -51,7 +51,8 @@ function showHide3(elem) {
     }    
     document.getElementById(elem.value).style.display = 'flex';
   }
-  resetServiceValues(); //remove previous transaction and serviceRate values when compilation transactions are changed, allowing new values to be pulled  
+  //remove previous transaction and serviceRate values when compilation transactions are changed, allowing new values to be pulled  
+  resetServiceValues(); 
   resetResultValue();  
 } 
 
@@ -95,12 +96,10 @@ function resetTransactions() {
 function resetServiceValues() {
     fiftyTxn.value = '';
     oneFiftyTxn.value = ''; 
-    oneFiftyPlusTxn.value = '';  
-    // serviceRate = '';
+    oneFiftyPlusTxn.value = '';    
 }
 
 function resetResultValue() {
-    // serviceRate = '';
     result.value = '';    
 }
 
@@ -124,18 +123,12 @@ function calculate() {
     }
     switch(compilation.value) {
       case 'fifty-txn':
-        // serviceRate = '$1500-$1800';
-        // result.value = serviceRate;
         result.value = '$1500-$1800';
         break;
       case 'onefifty-txn':
-        // serviceRate = '$1800-$2500';
-        // result.value = serviceRate;
         result.value = '$1800-$2500';
         break;
       case 'onefiftyplus-txn':
-        // serviceRate = '$2500-$3500'; 
-        // result.value = serviceRate; 
         result.value  = '$2500-$3500'; 
         break;
       default:
@@ -143,8 +136,6 @@ function calculate() {
     }
     switch(reviewEgmt.value) {
       case '10':
-        // serviceRate = '$5500-$7500';
-        // result.value = serviceRate;
         result.value = '$5500-$7500';
         break;
       default:
@@ -152,8 +143,6 @@ function calculate() {
     }
     switch(auditEgmt.value) {
       case '11':
-        // serviceRate '$9000-$12000';
-        // result.value = serviceRate;
         result.value = '$9000-$12000';
         break;
       default:
@@ -161,13 +150,9 @@ function calculate() {
     }
     switch(fiftyTxn.value) {      
       case 'consulting-business1':
-        // serviceRate = '$1500';        
-        // result.value = serviceRate;  
         result.value  = '$1500';  
         break;
       case 'holdings-company1':
-        // serviceRate = '$1700'; 
-        // result.value = serviceRate; 
         result.value = '$1700'; 
         break;
       default:
@@ -175,33 +160,21 @@ function calculate() {
     }    
     switch(oneFiftyTxn.value) {
       case 'consulting-business2':
-        // serviceRate = '$1800';
-        // result.value = serviceRate; 
         result.value = '$1800';
         break;
       case 'holdings-company2':
-        // serviceRate = '$2000';
-        // result.value = serviceRate; 
         result.value = '$2000';
         break;
       case 'trading-retail2':
-        // serviceRate = '$2500';
-        // result.value = serviceRate;  
         result.value = '$2500';
         break;
       case 'mortgage-insurance-broker2':
-        // serviceRate = '$1800';
-        // result.value = serviceRate; 
         result.value = '$1800';
         break;
       case 'home-renovation-contractor2':
-        // serviceRate = '$2300';
-        // result.value = serviceRate; 
         result.value = '$2300';
         break;
       case 'medical-professional-corporation2':
-        // serviceRate = '$2500';
-        // result.value = serviceRate;
         result.value = '$2500';
         break;
       default:
@@ -209,37 +182,28 @@ function calculate() {
     }  
     switch(oneFiftyPlusTxn.value) {
       case 'consulting-business3':
-        // serviceRate = '$2500';
-        // result.value = serviceRate; 
         result.value = '$2500';
         break;
       case 'holdings-company3':
-        serviceRate = '$2700';
-        result.value = serviceRate; 
+        result.value = '$2700';
         break;
       case 'trading-retail3':
-        serviceRate = '$3200'; 
-        result.value = serviceRate; 
+        result.value = '$3200'; 
         break;
       case 'manufacturing3':
-        serviceRate = '$3500';
-        result.value = serviceRate; 
+        result.value = '$3500';
         break;
       case 'restaurant3':
-        serviceRate = '$3500';
-        result.value = serviceRate; 
+        result.value = '$3500';
         break;  
       case 'mortgage-insurance-broker3':        
-        serviceRate = '$2500';
-        result.value = serviceRate; 
+        result.value = '$2500';
         break;
       case 'home-renovation-contractor3':
-        serviceRate = '$3000';
-        result.value = serviceRate; 
+        result.value = '$3000';
         break;
       case 'medical-professional-corporation3':
-        serviceRate = '$3500';
-        result.value = serviceRate;
+        result.value = '$3500';
         break;
       default:
         break;    
@@ -272,7 +236,7 @@ function processFormData(e) {
       fiftyService: fiftyService.value,
       oneFiftyService: oneFiftyService.value,
       oneFiftyPlusService: oneFiftyPlusService.value,
-      quote: result.value,
+      result: result.value,
       email: email.value
      })  
   })      

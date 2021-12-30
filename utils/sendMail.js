@@ -18,7 +18,7 @@ const sendMail = (req, res) => {
         <li>0-50 transactions service: ${req.body.fiftyService}</li>
         <li>50-150 transactions service: ${req.body.oneFiftyService}</li>
         <li>150+ transactions service: ${req.body.oneFiftyPlusService}</li>
-        <li>Quoted amount: ${req.body.quote}</li>
+        <li>Quoted amount: ${req.body.result}</li>
         <li>Email: ${req.body.email}</li>               
       </ul>      
     `;
