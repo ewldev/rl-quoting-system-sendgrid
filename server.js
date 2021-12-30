@@ -15,7 +15,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render("contact");
+  res.render("form");
 });
 
 app.post("/sendmail", (req, res) => {sendMail (req, res)});  
