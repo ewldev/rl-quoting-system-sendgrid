@@ -61,7 +61,7 @@
 
           <div id="fifty-txn">
             <label for="fiftyService">Available services (optional)</label>
-            <select name="fiftyService" onchange="resetServiceRate(this)" id="fiftyService" >
+            <select name="fiftyService" onchange="resetResultValue(this)" id="fiftyService" >
               <option value="" >Select your option</option>
               <option value="consulting-business1">Consulting business</option>
               <option value="holdings-company1">Holdings company</option>
@@ -70,7 +70,7 @@
 
           <div id="onefifty-txn">
             <label for="oneFiftyService">Available services (optional)</label>
-            <select name="oneFiftyService" onchange="resetServiceRate(this)" id="oneFiftyService" >
+            <select name="oneFiftyService" onchange="resetResultValue(this)" id="oneFiftyService" >
               <option value="" >Select your option</option>
               <option value="consulting-business2">Consulting business</option>
               <option value="holdings-company2">Holdings company</option>
@@ -83,7 +83,7 @@
 
           <div id="onefiftyplus-txn">
             <label for="oneFiftyPlusService">Available services (optional)</label>
-            <select name="oneFiftyPlusService" onchange="resetServiceRate(this)" id="oneFiftyPlusService" >
+            <select name="oneFiftyPlusService" onchange="resetResultValue(this)" id="oneFiftyPlusService" >
               <option value="" >Select your option</option>
               <option value="consulting-business3">Consulting business</option>
               <option value="holdings-company3">Holdings company</option>
@@ -97,16 +97,16 @@
           </div>           
         
           <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="email@address.com" required>
-        <button type="submit" id="submit">Submit</button>
-        <label for="result">Estimated cost of service</label>
-        <output name="quote" type="text" id="result"> </output> 
-        <a class="" href="">back to our site</a> 
-        
+          <!-- <input type="email" id="email" name="email" placeholder="email@address.com" required> -->
+          <input type="email" id="email" name="email" placeholder="email@address.com" >
+          <button type="submit" id="submit">Submit</button>
+          <label for="result">Estimated cost of service</label> 
+          <output name="quote" type="text" id="result"> </output>      
         
          <!-- Important!!! -->
           <!-- div1 div2 must reside below "onefiftyplus-txn" in order for showHide functions to work properly -->
           <!-- Incorporation & business accounts registration -->
+          
           <div id="div2">
             <p>$800 <br>
             business trade name add $100</p>
@@ -119,7 +119,9 @@
               self-employed business add $250 <br>
               foreign property declaration add $150            
             </p>    
-          </div>  
+          </div>           
+          
+          <a class="" href="">back to our site</a> 
         
         <!-- Error/Success Message -->
         <!-- <div class="message-container">

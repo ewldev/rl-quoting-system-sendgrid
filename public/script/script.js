@@ -10,7 +10,6 @@ const fiftyTxn = document.getElementById('fiftyService');
 const oneFiftyTxn = document.getElementById('oneFiftyService');  
 const oneFiftyPlusTxn = document.getElementById('oneFiftyPlusService'); 
 const result = document.getElementById('result');
-let serviceRate = 0;
 
 function showHide1(elem) {  
   //get the divs to show/hide  
@@ -26,10 +25,10 @@ function showHide1(elem) {
   }    
   setRequired(elem);  
   resetCategory();  
-  resetTransactions()
+  resetTransactions();
   resetServiceValues();
-  result.style.display = 'inline'; 
-  result.value = serviceRate;
+  resetResultValue();
+  result.style.display = 'inline';   
 }
 
 function showHide2(elem) {
@@ -42,19 +41,18 @@ function showHide2(elem) {
   setRequired2(elem); 
   resetTransactions();
   resetServiceValues();
-  result.value = serviceRate; 
+  resetResultValue();  
 }
 
 function showHide3(elem) {
   if(elem.selectedIndex != 0) {
     for(let i=2; i < divs.length; i++) {
-        divs[i].style.display = 'none';
-        // console.log('divsi', divs[i]);         
+        divs[i].style.display = 'none';          
     }    
     document.getElementById(elem.value).style.display = 'flex';
   }
   resetServiceValues(); //remove previous transaction and serviceRate values when compilation transactions are changed, allowing new values to be pulled  
-  result.value = serviceRate;
+  resetResultValue();  
 } 
 
 function setRequired (elem) {
@@ -98,11 +96,11 @@ function resetServiceValues() {
     fiftyTxn.value = '';
     oneFiftyTxn.value = ''; 
     oneFiftyPlusTxn.value = '';  
-    serviceRate = '';
+    // serviceRate = '';
 }
 
-function resetServiceRate () {
-    serviceRate = '';
+function resetResultValue() {
+    // serviceRate = '';
     result.value = '';    
 }
 
@@ -110,90 +108,110 @@ function calculate() {
     switch(service.value) {
       case 'incorporation & business accounts registration':
         document.getElementById('div2').style.display = 'block';     
+        result.value = '$800 - business trade name add $100';
         result.style.display = 'none'; 
         break;
       case 'personal tax preparation':
         document.getElementById('div3').style.display = 'block'; 
+        result.value = `<p>standard $150 <br>
+        capital gain/loss add $100 <br>
+        self-employed business add $250 <br>
+        foreign property declaration add $150            
+      </p>`
         result.style.display = 'none'; 
       default:
         break;  
     }
     switch(compilation.value) {
       case 'fifty-txn':
-        serviceRate = '$1500-$1800';
-        result.value = serviceRate;
+        // serviceRate = '$1500-$1800';
+        // result.value = serviceRate;
+        result.value = '$1500-$1800';
         break;
       case 'onefifty-txn':
-        serviceRate = '$1800-$2500';
-        result.value = serviceRate;
+        // serviceRate = '$1800-$2500';
+        // result.value = serviceRate;
+        result.value = '$1800-$2500';
         break;
       case 'onefiftyplus-txn':
-        serviceRate = '$2500-$3500'; 
-        result.value = serviceRate; 
+        // serviceRate = '$2500-$3500'; 
+        // result.value = serviceRate; 
+        result.value  = '$2500-$3500'; 
         break;
       default:
          break;  
     }
     switch(reviewEgmt.value) {
       case '10':
-        serviceRate = '$5500-$7500';
-        result.value = serviceRate;
+        // serviceRate = '$5500-$7500';
+        // result.value = serviceRate;
+        result.value = '$5500-$7500';
         break;
       default:
         break;  
     }
     switch(auditEgmt.value) {
       case '11':
-        serviceRate = '$9000-$12000';
-        result.value = serviceRate;
+        // serviceRate '$9000-$12000';
+        // result.value = serviceRate;
+        result.value = '$9000-$12000';
         break;
       default:
          break;  
     }
     switch(fiftyTxn.value) {      
       case 'consulting-business1':
-        serviceRate = '$1500';        
-        result.value = serviceRate;  
+        // serviceRate = '$1500';        
+        // result.value = serviceRate;  
+        result.value  = '$1500';  
         break;
       case 'holdings-company1':
-        serviceRate = '$1700'; 
-        result.value = serviceRate; 
+        // serviceRate = '$1700'; 
+        // result.value = serviceRate; 
+        result.value = '$1700'; 
         break;
       default:
         break;   
     }    
     switch(oneFiftyTxn.value) {
       case 'consulting-business2':
-        serviceRate = '$1800';
-        result.value = serviceRate; 
+        // serviceRate = '$1800';
+        // result.value = serviceRate; 
+        result.value = '$1800';
         break;
       case 'holdings-company2':
-        serviceRate = '$2000';
-        result.value = serviceRate; 
+        // serviceRate = '$2000';
+        // result.value = serviceRate; 
+        result.value = '$2000';
         break;
       case 'trading-retail2':
-        serviceRate = '$2500';
-        result.value = serviceRate;  
+        // serviceRate = '$2500';
+        // result.value = serviceRate;  
+        result.value = '$2500';
         break;
       case 'mortgage-insurance-broker2':
-        serviceRate = '$1800';
-        result.value = serviceRate; 
+        // serviceRate = '$1800';
+        // result.value = serviceRate; 
+        result.value = '$1800';
         break;
       case 'home-renovation-contractor2':
-        serviceRate = '$2300';
-        result.value = serviceRate; 
+        // serviceRate = '$2300';
+        // result.value = serviceRate; 
+        result.value = '$2300';
         break;
       case 'medical-professional-corporation2':
-        serviceRate = '$2500';
-        result.value = serviceRate;
+        // serviceRate = '$2500';
+        // result.value = serviceRate;
+        result.value = '$2500';
         break;
       default:
         break;  
     }  
     switch(oneFiftyPlusTxn.value) {
       case 'consulting-business3':
-        serviceRate = '$2500';
-        result.value = serviceRate; 
+        // serviceRate = '$2500';
+        // result.value = serviceRate; 
+        result.value = '$2500';
         break;
       case 'holdings-company3':
         serviceRate = '$2700';
