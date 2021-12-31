@@ -218,8 +218,8 @@ window.onload = function(){
       return false;
   };
   document.getElementById('button-close2').onclick = function(){
-    this.parentNode.parentNode.parentNode.parentNode
-    .removeChild(this.parentNode.parentNode.parentNode);
+    this.parentNode.parentNode.parentNode
+    .removeChild(this.parentNode.parentNode);
     return false;
   };
 };
