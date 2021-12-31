@@ -177,15 +177,13 @@ h1 {
     color: #006aff;
     background: #90bdff;
     text-decoration: none;
+    border: none;
     border-radius: 5px;
     height: 41px;
-    width: 50%;
+    /* width: 48%; */
+    width: 154px;
     font-size: 20px;    
-    margin: 45px auto 0;   
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    margin: 15px auto 46px;    
   }
   #button-close2:hover {
     filter: brightness(200%);
@@ -200,4 +198,7 @@ h1 {
     #form {
       width: 369px;
     }
+    #button-close2 {
+      width: 170px;
+    }   
 }    
