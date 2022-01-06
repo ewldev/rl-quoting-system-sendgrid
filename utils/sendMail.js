@@ -6,11 +6,11 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const sendMail = (req, res) => {
     console.log('sendMail req.body', req.body)
 
-    const from = {name:"RL Quoting System", email:"edwin.leung2@gmail.com",};
-    const to = "edwin.leung2@gmail.com";  
+    const from = {name:"RL Quotation", email:"rlquotation@gmail.com",};
+    const to = "rlquotation@gmail.com";  
     const subject = "New Quotation Request";  
     const output = `
-      <p>You have a new quotation request</p>
+      <p>You have a new quotation request:</p>
       <ul>
         <li>Service: ${req.body.service}</li>
         <li>Category: ${req.body.category}</li>

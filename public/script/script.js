@@ -213,14 +213,16 @@ function calculate() {
 // close button
 window.onload = function(){
   document.getElementById('button-close1').onclick = function(){
-      this.parentNode.parentNode.parentNode
-      .removeChild(this.parentNode.parentNode);
-      return false;
+      // this.parentNode.parentNode.parentNode
+      // .removeChild(this.parentNode.parentNode);
+      // return false;
+    document.getElementById('container').style.display = 'none';  
   };
   document.getElementById('button-close2').onclick = function(){
-    this.parentNode.parentNode.parentNode
-    .removeChild(this.parentNode.parentNode);
-    return false;
+    // this.parentNode.parentNode.parentNode
+    // .removeChild(this.parentNode.parentNode);
+    // return false;
+    document.getElementById('container').style.display = 'none';  
   };
 };
 
