@@ -234,7 +234,7 @@ function processFormData(e) {
   calculate();
 
   // access sendgrid api
-  fetch('http://localhost:8080/sendmail',{
+  fetch('https://quiet-badlands-16996.herokuapp.com:8080/sendmail',{
     method: 'post',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
