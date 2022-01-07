@@ -234,7 +234,7 @@ function processFormData(e) {
   calculate();
 
   // access sendgrid api
-  fetch('https://quiet-badlands-16996.herokuapp.com/sendmail',{
+  fetch('https://rl-quotation.herokuapp.com/sendmail',{
     method: 'post',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
