@@ -16,8 +16,12 @@ body {
 
 #container {
   width: 100%;
-  color: #E5EBFA;
-  background: #1D67CD;;
+  color: #fff1e2;
+  /* color: #E5EBFA; */
+  /* background: #9D6E4B; */
+  /* background: #ad5c20; */
+  background: #b96f37;
+  /* background: #1D67CD;; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,17 +41,18 @@ body {
   height: 3em;
   border-radius: 50%;
   background: transparent;
-  color: #1da1f2;
+  color: #8b410b;
+  /* color: #1da1f2; */
   font: inherit;
   text-indent: 100%;
   cursor: pointer;
 }
 #button-close1:focus {
   outline: solid 0 transparent;
-  box-shadow: 0 0 0 2px #8ed0f9;
+  box-shadow: 0 0 0 2px #86551d;
 }
 #button-close1:hover {
-  background: rgba(29, 161, 142, 0.1);
+  background: rgba(116, 62, 12, 0.1);
 }
 #button-close1:before, #button-close1:after {
   position: absolute;
@@ -97,8 +102,12 @@ h1 {
 
   #form button {
     cursor: pointer;
-    color: #0c52b4;
-    background: #bacae2;
+    color: #2c2102;
+    
+    /* color: #0c52b4;/
+    /* background: #e1d5ba; */
+    background: orange;
+    /* background: #bacae2; */
     border: none;
     border-radius: 5px;
     height: 41px;
@@ -111,8 +120,10 @@ h1 {
   }
 
   #form button:hover {
-    filter: brightness(200%);
-    background: rgb(22, 22, 22);
+    /* filter: brightness(200%); */
+    color: #fff;
+    /* background: #57400e; */
+    background: orangered;
   }
 
   
@@ -171,8 +182,10 @@ h1 {
   
   #button-close2 {
     cursor: pointer;
-    color: #006aff;
-    background: #90bdff;
+    color: #2c2102;
+    /* color: #006aff; */
+    background: #dac086;
+    /* background: #90bdff; */
     text-decoration: none;
     border: none;
     border-radius: 5px;
@@ -182,8 +195,10 @@ h1 {
     margin: 15px auto 46px;    
   }
   #button-close2:hover {
-    filter: brightness(200%);
-    background: rgb(22, 22, 22);
+    /* filter: brightness(200%); */
+    color: #000;
+    background:  #e7bb54;
+    /* background: #e1d5ba;  */
   }
 
 @media screen and (min-width: 500px) {
