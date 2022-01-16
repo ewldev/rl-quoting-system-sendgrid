@@ -17,12 +17,8 @@ body {
 #container {
   width: 100%;
   color: #fff1e2;
-  /* color: #E5EBFA; */
-  /* background: #9D6E4B; */
-  /* background: #ad5c20; */
   background: #4A7BB8;
-  /* background: #b96f37; */
-  /* background: #1D67CD;; */
+ /* background: #1D67CD; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,8 +100,7 @@ h1 {
   #form button {
     cursor: pointer;
     color: #2c2102;    
-    /* color: #0c52b4;/
-    /* background: #e1d5ba; */
+    /* color: #0c52b4;*/
     background: #e99b0c;
     /* background: #bacae2; */
     border: none;
@@ -122,7 +117,6 @@ h1 {
   #form button:hover {
     /* filter: brightness(200%); */
     color: rgb(31, 28, 28);
-    /* background: #57400e; */
     background: orange;
   }
 
@@ -185,7 +179,6 @@ h1 {
     color: #2c2102;
     /* color: #006aff; */
     background: #a5afbe;
-    /* background: #dac086; */
     /* background: #90bdff; */
     text-decoration: none;
     border: none;
